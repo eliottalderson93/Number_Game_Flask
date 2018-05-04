@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Chess Images</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='javascript/my_script.js') }}">
+        $(document).ready(function () {
+            $("").___();
+        });
+    </script>
+</head>
+
+<body>
+    <div class='wrapper'>
+        <h1>Welcome to the Great Number Game</h1>
+        <p>I am thinking of a number between 1 and 100</p>
+        <p>Take a guess!</p>
+        <form name='addtwo' id='addtwo' method="post" action="/addtwo">
+            <input type='hidden' value='add_two_visits'>
+        </form>
+        <!-- <form action="/reset" id='reset' method='post' name='rest'>
+            <input type='hidden' value='reset'>
+        </form> -->
+        <div class='buttons'>
+            <button type='submit' form="addtwo" action="/a" value=''>Add Two Visits</button>
+            <!-- <button type='submit' form="reset" action="/reset" value='reset'>Reset</button> -->
+        </div>
+    </div>
+</body>
+
+</html>

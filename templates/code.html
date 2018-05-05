@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Chess Images</title>
+    <title>The Great Number Game</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='javascript/my_script.js') }}">
@@ -16,15 +16,24 @@
         <h1>Welcome to the Great Number Game</h1>
         <p>I am thinking of a number between 1 and 100</p>
         <p>Take a guess!</p>
-        <form name='addtwo' id='addtwo' method="post" action="/addtwo">
-            <input type='hidden' value='add_two_visits'>
+        {% if(session['high']==True): %}
+            <p class = "high_box">Too high</p>
+        {% elif(session['low']==True): %}
+            <p class = "low_box">Too low</p>
+        {% elif(session['correct']==True): %}
+            <p class = "correct_box">
+                55 was the number!
+                <a href = '/reset'><button>Play Again!</button></a>
+            </p>
+        {% else: %}
+            <!--No cookie in session, no display-->
+        {% endif %}
+        <form name='guess_form' id='guess' method="post" action="/guess">
+            <input type ='text'name = 'guess'>
         </form>
-        <!-- <form action="/reset" id='reset' method='post' name='rest'>
-            <input type='hidden' value='reset'>
-        </form> -->
         <div class='buttons'>
-            <button type='submit' form="addtwo" action="/a" value=''>Add Two Visits</button>
-            <!-- <button type='submit' form="reset" action="/reset" value='reset'>Reset</button> -->
+            <button name="guess" type='submit' method= 'post' form="guess">Play The Game</button>
+            <a href = '/reset'><button>Reset</button></a>
         </div>
     </div>
 </body>

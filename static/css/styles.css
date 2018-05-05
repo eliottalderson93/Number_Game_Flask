@@ -11,8 +11,31 @@
     background-color:silver;
 }
     /*Define the classes below*/
-    .class{
-        height:500px;
-        width:500px;
+    .high_box{
+        background-color:red;
+        text-align:center;
+        display:inline-block;
+        max-height:300px;
+        width:300px;
         margin:auto;
+        padding-top:100px;
+        padding-bottom:115px;
+    }
+    .low_box{
+        background-color:red;
+        display:inline-block;
+        max-height:300px;
+        width:300px;
+        margin:auto;
+        padding-top:100px;
+        padding-bottom:115px;
+    }
+    .correct_box{
+        background-color:green;
+        display:inline-block;
+        max-height:300px;
+        width:300px;
+        margin:auto;
+        padding-top:100px;
+        padding-bottom:115px;
     }
